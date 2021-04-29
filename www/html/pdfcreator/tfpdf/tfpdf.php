@@ -459,6 +459,7 @@ function Rect($x, $y, $w, $h, $style='')
 	$this->_out(sprintf('%.2F %.2F %.2F %.2F re %s',$x*$this->k,($this->h-$y)*$this->k,$w*$this->k,-$h*$this->k,$op));
 }
 
+// AddFont( [フォントの種類] ,[フォントのスタイル] ,[フォントのファイル], [UTF-8を使うか])
 function AddFont($family, $style='', $file='', $uni=false)
 {
 	// Add a TrueType, OpenType or Type1 font
@@ -557,7 +558,7 @@ function AddFont($family, $style='', $file='', $uni=false)
 		$this->fonts[$fontkey] = $info;
 	}
 }
-
+// SetFont( [フォントの種類] ,[フォントのスタイル] ,[フォントのファイル])
 function SetFont($family, $style='', $size=0)
 {
 	// Select a font; size given in points
@@ -674,6 +675,7 @@ function AcceptPageBreak()
 	return $this->AutoPageBreak;
 }
 
+// PDFに文字を書くときに使う
 function Cell($w, $h=0, $txt='', $border=0, $ln=0, $align='', $fill=false, $link='')
 {
 	// Output a cell
